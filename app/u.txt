@@ -1,0 +1,33 @@
+letter-spacing
+增加或减少字符间的空白（字符间距）。
+
+text-indent 属性规定文本块中首行文本的缩进。
+首行缩进两字符  text-indent:2em;
+
+
+box-sizing:border-box;
+保证宽度就是你设的宽度，不会被padding、border撑大
+
+
+
+table先去除border
+
+border-bottom加在tr上无效，但是加在th、td上面中间会有断缝，解决方法是设置table的border-collapse如下
+table
+  {
+  border-collapse:collapse;
+  }
+
+语义化标签table的thead tbody
+
+dl>(dt+dd)*2
+点击Tab键，就可以得到
+<dl>
+   <dt></dt>
+   <dd></dd>
+   <dt></dt>
+   <dd></dd>
+</dl>
+
+
+Ctrl+Alt+Enter可以在选中区域外面加包裹标签
