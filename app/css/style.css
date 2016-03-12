@@ -89,6 +89,7 @@ h2.caption {
 }
 #left .column .table tr th {
   width: 70px;
+  text-align: left;
 }
 #left .column .table tr td,
 #left .column .table tr th {
@@ -198,6 +199,13 @@ h2.caption {
   top: 7.5px;
   left: 0;
   margin-left: -5px;
+}
+#right .row .time-block .content .desc a {
+  text-decoration: none;
+  color: #000;
+}
+#right .row .time-block .content .desc a:hover {
+  color: #666666;
 }
 #right .row .time-block .content .desc .title {
   line-height: 25px;
