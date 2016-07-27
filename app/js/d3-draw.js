@@ -149,7 +149,7 @@ function renderAxes(svg){ // <-G
     var xAxis = d3.svg.axis()
             .scale(x.range([0, quadrantWidth()]))
             .orient("bottom")
-            .ticks(5);
+            .ticks(7);
     var yAxis = d3.svg.axis()
             .scale(y.range([quadrantHeight(), 0]))
             .orient("left")
