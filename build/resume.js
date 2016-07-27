@@ -21,7 +21,7 @@ function render(innerRadius) {
         {startAngle: 0, endAngle: 0.8 * endAngle}
     ];
     var css = [
-        {startAngle: 0, endAngle: 0.6 * endAngle}
+        {startAngle: 0, endAngle: 0.8 * endAngle}
     ];
     var javascript = [
         {startAngle: 0, endAngle: 0.6 * endAngle}
@@ -47,7 +47,7 @@ function render(innerRadius) {
 
     // css技能
     drawArc(svgcss, innerRadius, back, css, "#E8E8E8", "#3F4344", 'CSS');
-    
+
     //javascript技能
     drawArc(svgjavascript, innerRadius, back, javascript, "#E8E8E8", "#3F4344", 'JavaScript');
 
@@ -118,48 +118,47 @@ var widthLine = 200,
     y = d3.scale.linear() // <-B
         .domain([0, 4])
         .range([heightLine - margin, margin]);
-    
+
 var data = [ // <-C
     [
         {x: 1, y: 1},{x: 2, y: 1},{x: 3, y: 3},
-        {x: 4, y: 1}
+        {x: 4, y: 1},{x: 5, y: 2},{x: 6, y: 2}
     ]
 ];
 
 var line = d3.svg.line() // <-D
         .x(function(d){return x(d.x);})
         .y(function(d){return y(d.y);});
-    
+
 var svg = d3.select(".edu-left .chart").append("svg");
 
 svg.attr("height", heightLine)
     .attr("width", widthLine);
-    
+
  svg.selectAll("path")
         .data(data)
-    .enter()
+        .enter()
         .append("path") // <-E
-        .attr("class", "line")            
+        .attr("class", "line")
         .attr("d", function(d){return line(d);}) // <-F
         .attr('attribute', 'value');
-        
+
 renderAxes(svg);
-    
+
 function renderAxes(svg){ // <-G
     var xAxis = d3.svg.axis()
             .scale(x.range([0, quadrantWidth()]))
             .orient("bottom")
-            .ticks(5);            
-            
+            .ticks(5);
     var yAxis = d3.svg.axis()
             .scale(y.range([quadrantHeight(), 0]))
             .orient("left")
             .ticks(4);
-    
-    svg.append("g")        
+
+    svg.append("g")
         .attr("class", "axis")
         .attr("transform", function(){
-            return "translate(" + xStart() 
+            return "translate(" + xStart()
                 + "," + yStart() + ")";
         })
         .call(xAxis)
@@ -167,11 +166,11 @@ function renderAxes(svg){ // <-G
         .text('学期')
         .attr('dx', '150px')
         .attr('dy', '-0.5em');
-        
-    svg.append("g")        
+
+    svg.append("g")
         .attr("class", "axis")
         .attr("transform", function(){
-            return "translate(" + xStart() 
+            return "translate(" + xStart()
                 + "," + yEnd() + ")";
         })
         .call(yAxis)
