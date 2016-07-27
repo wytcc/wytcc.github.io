@@ -109,7 +109,7 @@ function drawArc(svg, innerRadius, back, data, colorBack, colorFront, text){
 }
 
 
-var widthLine = 200,
+var widthLine = 240,
     heightLine = 120,
     margin = 20,
     x = d3.scale.linear() // <-A
