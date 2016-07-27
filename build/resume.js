@@ -164,7 +164,7 @@ function renderAxes(svg){ // <-G
         .call(xAxis)
         .append('text')
         .text('学期')
-        .attr('dx', '150px')
+        .attr('dx', '180px')
         .attr('dy', '-0.5em');
 
     svg.append("g")
