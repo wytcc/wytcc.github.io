@@ -113,7 +113,7 @@ var widthLine = 240,
     heightLine = 120,
     margin = 20,
     x = d3.scale.linear() // <-A
-        .domain([0, 5])
+        .domain([0, 7])
         .range([margin, widthLine - margin]),
     y = d3.scale.linear() // <-B
         .domain([0, 4])
